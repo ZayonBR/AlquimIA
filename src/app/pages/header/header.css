@@ -1,0 +1,12 @@
+/* Garante que o dropdown sempre fique por cima de tudo no mobile */
+.absolute {
+  pointer-events: all !important;
+  z-index: 9999 !important;
+}
+
+/* Força a visibilidade se a classe estiver ativa */
+.visible-important {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}

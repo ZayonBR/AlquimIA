@@ -13,6 +13,8 @@ export class Header {
   isMenuOpen = false;
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+  this.isMenuOpen = !this.isMenuOpen;
+  // Log para você testar no console do navegador se o clique está registrando
+  console.log('Menu status:', this.isMenuOpen); 
+}
 }

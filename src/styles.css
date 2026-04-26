@@ -1,40 +1,33 @@
-@import "tailwindcss";
-
-/* No Tailwind v4, o tema é definido dentro do CSS com @theme */
-@theme {
-  --color-background: #080808;
-  --color-accent: #00ffc8;
+/* Ajuste Global para Títulos Responsivos */
+h1 {
+  font-size: clamp(2rem, 8vw, 5rem); /* Flui entre 32px e 80px dependendo da tela */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
 }
 
-/* Suas classes customizadas entram aqui */
+h2 {
+  font-size: clamp(1.5rem, 5vw, 3.5rem); /* Flui entre 24px e 56px */
+  line-height: 1.2;
+}
+
+/* Garante que o efeito de Outline não fique "apagado" em telas pequenas */
 @utility text-stroke {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
   color: transparent;
+  transition: -webkit-text-stroke 0.5s ease;
 }
 
-@utility transition-tegma {
-  transition-all: all;
-  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-body {
-  background-color: var(--color-background);
-  color: white;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-}
-html {
-  scroll-behavior: smooth; /* Faz o clique no menu deslizar suavemente */
-}
-
-/* Esconder a barra de scroll para um visual mais limpo (opcional) */
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: #080808;
-}
-::-webkit-scrollbar-thumb {
-  background: #00ffc8;
-  border-radius: 10px;
+/* Ajuste de Respiro para Mobile */
+@media (max-width: 768px) {
+  section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Ajuste específico para o título que você mostrou no print */
+  .hero-title {
+    line-height: 1.05;
+    word-spacing: -2px;
+  }
 }
