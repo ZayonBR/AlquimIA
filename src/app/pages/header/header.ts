@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'; // Certifique-se de que é RouterModule
+import { CommonModule } from '@angular/common'; // <-- ADICIONE ESTA LINHA
+import { RouterModule } from '@angular/router'; // Provavelmente você já tem essa
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule, RouterModule], // Aqui está o segredo
+  standalone: true, // Se o seu componente for standalone
+  imports: [CommonModule, RouterModule], // <-- ADICIONE O CommonModule AQUI
   templateUrl: './header.html',
-  styleUrl: './header.css' // Corrigi de .html para .css aqui!
+  styleUrls: ['./header.css']
 })
-export class Header { }
+export class Header {
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+}
