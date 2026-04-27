@@ -1,6 +1,6 @@
-<header class="fixed top-0 left-0 w-full z-[999] px-4 md:px-10 py-6 md:py-8 flex items-center mix-blend-difference">
+<header class="fixed top-0 left-0 w-full z-[9999] px-4 md:px-10 py-6 md:py-8 flex items-center">
   
-  <div class="flex-1">
+  <div class="flex-1 mix-blend-difference">
     <a routerLink="/" class="cursor-pointer group inline-block">
       <h1 class="text-white font-black tracking-tighter text-base md:text-xl uppercase transition-all group-hover:tracking-widest">
         AlquimIA
@@ -9,46 +9,43 @@
   </div>
 
   <nav class="flex gap-3 md:gap-8 items-center justify-center">
-    <a routerLink="/" class="text-white/60 hover:text-white text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] transition-all duration-500">
+    <a routerLink="/" class="text-white/60 hover:text-white text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] transition-all duration-500 mix-blend-difference">
       Início
     </a>
     
-    <a routerLink="/sobre" class="text-white/60 hover:text-white text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] transition-all duration-500">
+    <a routerLink="/sobre" class="text-white/60 hover:text-white text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] transition-all duration-500 mix-blend-difference">
       Sobre
     </a>
 
     <div class="relative">
       <button 
-        (click)="toggleMenu(); $event.stopPropagation()"
-        class="text-white/60 hover:text-white text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] transition-all duration-500 flex items-center gap-1 md:gap-2 outline-none cursor-pointer">
+        (click)="isMenuOpen = !isMenuOpen"
+        class="text-white/60 hover:text-white text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] transition-all duration-500 flex items-center gap-1 md:gap-2 outline-none cursor-pointer mix-blend-difference">
         Serviços 
-        <svg 
-          class="w-2 h-2 transition-transform duration-500" 
-          [ngClass]="{'rotate-180 text-white': isMenuOpen}"
-          fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-2 h-2 transition-transform duration-500" [ngClass]="{'rotate-180 text-white': isMenuOpen}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
 
       <div 
         [ngClass]="isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'"
-        class="absolute left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 mt-4 w-40 md:w-56 bg-[#0a0a0a] border border-white/10 transition-all duration-500 z-[9999] p-2 shadow-2xl">
+        class="absolute left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 mt-4 w-40 md:w-56 bg-black border border-white/20 transition-all duration-500 z-[99999] p-2 shadow-2xl">
         
         <div class="flex flex-col text-center md:text-left">
-          <a routerLink="/sites" (click)="isMenuOpen = false" class="px-5 py-4 text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-white hover:bg-white/[0.05] transition-all duration-300">
+          <a routerLink="/sites" (click)="isMenuOpen = false" class="px-5 py-4 text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-white hover:bg-white/10 transition-all duration-300">
             Arquitetura Web
           </a>
-          <a routerLink="/automacao" (click)="isMenuOpen = false" class="px-5 py-4 text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-white hover:bg-white/[0.05] transition-all duration-300 border-t border-white/5">
+          <a routerLink="/automacao" (click)="isMenuOpen = false" class="px-5 py-4 text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-white hover:bg-white/10 transition-all duration-300 border-t border-white/10">
             Automação de IA
           </a>
-          <a routerLink="/design" (click)="isMenuOpen = false" class="px-5 py-4 text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-white hover:text-accent hover:bg-white/[0.05] transition-all duration-300 border-t border-white/5">
+          <a routerLink="/design" (click)="isMenuOpen = false" class="px-5 py-4 text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-white hover:bg-white/10 transition-all duration-300 border-t border-white/10">
             Design Estratégico
           </a>
         </div>
       </div>
     </div>
 
-    <a routerLink="/contato" class="border border-white/20 px-3 md:px-6 py-2 text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-700">
+    <a routerLink="/contato" class="border border-white/20 px-3 md:px-6 py-2 text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-700 mix-blend-difference">
       Contato
     </a>
   </nav>

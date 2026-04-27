@@ -58,8 +58,18 @@ html {
 
 /* Ajuste fino para o Hero no Mobile */
 @media (max-width: 768px) {
-  h1 {
-    line-height: 1.05; /* Deixa o texto ainda mais ajustado no celular */
-    margin-bottom: 1rem;
+  /* Força os textos a ficarem brancos e opacos no celular */
+  nav a, 
+  nav button, 
+  .absolute a {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    font-weight: 700 !important; 
+  } /* <--- FALTAVA ESSA CHAVE AQUI PARA FECHAR OS LINKS! */
+
+  /* Agora sim, a regra isolada para o fundo do menu */
+  .mix-blend-normal {
+    mix-blend-mode: normal !important;
+    background-color: #080808 !important;
   }
 }
